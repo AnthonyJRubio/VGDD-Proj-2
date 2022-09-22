@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class GrapplingHook : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    #region Editor Variables
+    [SerializeField]
+    [Tooltip("Length the grappling hook can go")]
+    private float m_Length;
+    public float Length
     {
-        
+        get
+        {
+            return m_Length;
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    #endregion
 }

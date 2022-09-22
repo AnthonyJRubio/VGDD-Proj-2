@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class LifeScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    #region Editor Variables
+    [SerializeField]
+    [Tooltip("Amount of health the heart is at")]
+    private int m_Life;
+    public int Life
     {
-        
+        get
+        {
+            return m_Life;
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    #endregion
 }

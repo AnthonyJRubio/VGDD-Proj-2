@@ -9,12 +9,8 @@ public class PlayerMovement : MonoBehaviour
     private float jumpingPower = 8f;
 
 
-    //TESTING PURPOSES
-    [SerializeField]
-    [Tooltip("Level is finished")]
-    private bool m_Finished = false;
-
-    //END TESTING
+    #region Cached Region
+    #endregion
 
     #region Private Variables
     private Rigidbody2D rb;
@@ -60,23 +56,15 @@ public class PlayerMovement : MonoBehaviour
     #region Collision Methods
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Got here at least");
-        
-        Debug.Log("got here");
         if (other.CompareTag("Lever"))
         {
-            Debug.Log("Touched a Lever");
             Lever lever = other.GetComponent<Lever>();
             lever.GravChange();
             gameObject.GetComponent<Rigidbody2D>().gravityScale *= lever.GravMult;
             jumpingPower *= lever.GravMult;
-            //Transform groundCheck = transform.Find("Ground Check");
-            //groundCheck.position *= new Vector2(1, -1);
-        }
-        else if (other.CompareTag("Finish"))
+        }else if (other.CompareTag("Finish"))
         {
-            m_Finished = true;
-            Debug.Log(m_Finished);
+            other.GetComponent<LevelManager>().LevelOver();
         }
         
     }

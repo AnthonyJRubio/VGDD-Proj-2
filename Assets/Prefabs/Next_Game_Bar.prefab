@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 778927818339308223}
   - component: {fileID: 2280482103560054849}
   - component: {fileID: 8295371118937210338}
+  - component: {fileID: 1602857952}
   m_Layer: 0
   m_Name: Next_Game_Bar
   m_TagString: Finish
@@ -111,3 +112,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1602857952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3615267212243476976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283b0941a59dd0a45914da12bfb3d347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Finished: 0

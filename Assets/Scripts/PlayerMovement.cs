@@ -16,23 +16,18 @@ public class PlayerMovement : MonoBehaviour
 
     //END TESTING
 
-    [SerializeField]
+    #region Private Variables
     private Rigidbody2D rb;
     [SerializeField]
     private Transform groundCheck;
     [SerializeField]
     private LayerMask groundLayer;
-
-    #region Cached References
-    private Lever switched; //our switch
     #endregion
-
 
     #region Initialization
     public void Awake()
     {
-        switched = GetComponent<Lever>();
-        Debug.Log(switched); //checking if Lever is detected within level, currently is not. Another approach is advised.
+        rb = GetComponent<Rigidbody2D>();
     }
     #endregion
     // Update is called once per frame
@@ -82,17 +77,21 @@ public class PlayerMovement : MonoBehaviour
 
     //ISSUE: Not detecting other collider even with trigger on
     #region Collision Methods
-    public void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Got here at least");
+        /**
         Debug.Log("got here");
         if (other.CompareTag("Lever"))
         {
-            switched.GravChange();
+            Debug.Log("Touched a Lever");
+            //other.GetComponent<Lever>().GravChange();
         }else if (other.CompareTag("Finish"))
         {
             m_Finished = true;
             Debug.Log(m_Finished);
         }
+        **/
     }
     #endregion
 }

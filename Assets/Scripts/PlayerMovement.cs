@@ -77,21 +77,21 @@ public class PlayerMovement : MonoBehaviour
 
     //ISSUE: Not detecting other collider even with trigger on
     #region Collision Methods
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Got here at least");
-        /**
+        
         Debug.Log("got here");
         if (other.CompareTag("Lever"))
         {
             Debug.Log("Touched a Lever");
-            //other.GetComponent<Lever>().GravChange();
+            other.GetComponent<Lever>().GravChange();
         }else if (other.CompareTag("Finish"))
         {
             m_Finished = true;
             Debug.Log(m_Finished);
         }
-        **/
+        
     }
     #endregion
 }
